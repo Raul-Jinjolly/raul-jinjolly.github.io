@@ -1,0 +1,499 @@
+@import './mixins/_smart-grid';
+@import './_fonts';
+@import './sprite-png';
+
+$white : #fff;
+$dark: #3c3c3c;
+
+* {box-sizing: border-box}
+
+body, section, p, h1, h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: 'Futura';
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+p { 
+  @include md(font-size, 0.8rem);
+  @include sm(font-size, 0.7rem);
+
+  font-family: 'Lato';
+  font-size: 1em;
+}
+
+h2 {
+  @include md(font-size, 1.2em);
+  @include sm(font-size, 0.8em);
+
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.3125rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  @include md(font-size, 0.8rem);
+  @include sm(font-size, 0.6rem);
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 80vh;
+  background: url('../images/initial/layer8.jpg') no-repeat 100% 50%;
+  background-size: cover;
+  color: $white;
+  text-align: center;
+
+  &__offer {
+    @include size(12);
+    @include size-xlg(12);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon-1 {
+    @include sprite($ellipse1);
+    @include xlg(width, 58.5px);
+    @include xlg(height, 62.1px);
+    @include lg(width, 52px);
+    @include lg(height, 55.2px);
+    @include md(width, 39px);
+    @include md(height, 41.4px);
+    @include sm(width, 26px);
+    @include sm(height, 27.6px);
+
+    background-position: 56.037% 74.233%;
+    background-size: 2087.692% 1044.927%;
+  }
+
+  &__icon-2 {
+    @include sprite($shape1);
+    @include xlg(width, 20.7px);
+    @include xlg(height, 33.3px);
+    @include lg(width, 18.4px);
+    @include lg(height, 29.6px);
+    @include md(width, 13.8px);
+    @include md(height, 22.2px);
+    @include sm(width, 9.2px);
+    @include sm(height, 14.8px);
+
+    background-position: 47.901% 84.795%;
+    background-size: 5900% 1948.648%;
+  }
+
+  &__title {
+    @include size-xlg(7);
+    @include size-md(11);
+    @include md(font-size, 2rem);
+    @include sm(font-size, 1.1rem)
+
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+
+  &__subtitle {
+    @include size-xlg(5);
+    @include size-md(8);
+    @include size-sm(11);
+    @include md(font-size, 0.8rem);
+    @include sm(font-size, 0.6rem);
+
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    padding-top: 1.5rem
+  }
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  height: 60vh;
+  padding: 3rem 0;
+
+  &__container {
+    @include size(6);
+    @include size-lg(8);
+    @include size-md(10);
+    @include size-xs(11);
+
+    text-align: center;
+    margin: auto
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -0.75rem;
+
+    @include md(margin-bottom, -0.6rem);
+    @include sm(margin-bottom, -0.4rem);
+
+  }
+
+  &__title:before,
+  &__title:after {
+    content: '';
+    height: 2px;
+    flex-basis: 25%;
+    background-color: $dark;
+
+    @include sm(flex-basis, 20%)
+  }
+
+  &__info {
+    @include offset-padding(2);
+    @include offset-padding-lg(2);
+    @include offset-padding-md(2);
+    @include offset-padding-sm(0.5);
+    @include offset-padding-xs(0.5);
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border: 2px solid $dark;
+    border-top: none;
+    line-height: 1.3rem
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  height: 60vh;
+  padding: 3rem 0;
+  background: url('../images/initial/layer4.jpg') no-repeat center;
+  background-size: cover;
+  color: $white;
+
+  &__container {
+    @include size(6);
+    @include size-lg(8);
+    @include size-md(10);
+    @include size-xs(11);
+
+    text-align: center;
+    margin: auto
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -0.75rem;
+
+    @include md(margin-bottom, -0.6rem);
+    @include sm(margin-bottom, -0.4rem);
+  }
+
+  &__title:before,
+  &__title:after {
+    content: '';
+    height: 2px;
+    flex-basis: 25%;
+    background-color: $white;
+
+    @include sm(flex-basis, 20%)
+  }
+
+  &__info {
+    @include offset-padding(2);
+    @include offset-padding-lg(2);
+    @include offset-padding-md(2);
+    @include offset-padding-sm(0.5);
+    @include offset-padding-xs(0.5);
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border: 2px solid $white;
+    border-top: none;
+    line-height: 1.3rem
+  }
+}
+
+.what-we-do {
+  min-height: 600px;
+  padding: 3rem 0;
+
+  &__container {
+    @include size(6);
+    @include size-lg(8);
+    @include size-md(10);
+    @include size-xs(11);
+
+    text-align: center;
+    margin: auto;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -0.75rem;
+
+    @include md(margin-bottom, -0.6rem);
+    @include sm(margin-bottom, -0.4rem);
+  }
+
+  &__title:before,
+  &__title:after {
+    content: '';
+    height: 2px;
+    flex-basis: 25%;
+    background-color: $dark;
+
+    @include sm(flex-basis, 20%)
+  }
+
+  &__items {
+    @include offset-padding(2);
+    @include offset-padding-lg(2);
+    @include offset-padding-md(2);
+    @include offset-padding-sm(0.5);
+    @include offset-padding-xs(0.5);
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border: 2px solid $dark;
+    border-top: none;
+    line-height: 1.3rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__icon-1 {
+    @include sprite($wwd1);
+    @include xlg(width, 64px);
+    @include xlg(height, 66.4px);
+    @include lg(width, 48px);
+    @include lg(height, 49.8px);
+    @include md(width, 32px);
+    @include md(height, 33.2px);
+
+    background-position: 50.039% 75.862%;
+    background-size: 1696.25% 868.674%;
+  }
+
+  &__icon-2 {
+    @include sprite($wwd2);
+    @include xlg(width, 63.2px);
+    @include xlg(height, 60.8px);
+    @include lg(width, 47.4px);
+    @include lg(height, 45.6px);
+    @include md(width, 31.6px);
+    @include md(height, 30.4px);
+
+    background-position: 43.427% 89.92%;
+    background-size: 1717.721% 948.684%;
+  }
+
+  &__icon-3 {
+    @include sprite($wwd3);
+    @include xlg(width, 63.2px);
+    @include xlg(height, 60.8px);
+    @include lg(width, 47.4px);
+    @include lg(height, 45.6px);
+    @include md(width, 31.6px);
+    @include md(height, 30.4px);
+
+    background-position: 43.427% 76.825%;
+    background-size: 1717.721% 792.307%;
+  }
+}
+
+.links {
+  @include row-flex();
+  @include justify-content(space-between);
+  @include justify-content-md(space-around);
+  @include align-content(space-between);
+  @include align-content-md(stretch);
+
+  margin-left: 0;
+  margin-right: 0;
+
+  height: 30vw;
+  @include md(height, 50vw);
+  @include sm(height, 100vw);
+}
+.tile {
+  min-height: 48.5%;
+  background: url('sprite.png');
+  position: relative;
+  cursor: pointer;
+
+  @include md(margin, 7px 0);
+  @include md(min-height, 27%);
+
+  @include sm(margin, 2px 0);
+  @include md(min-height, 14%);
+
+  &__side {
+    @include size(3.5);
+    @include size-xlg(3.5);
+    @include size-lg(3.5);
+    @include size-md(6);
+    @include size-sm(8);
+  }
+
+  &__center {
+    @include size(5);
+    @include size-xlg(5);
+    @include size-lg(5);
+    @include size-md(6);
+    @include size-sm(8);
+  }
+
+  &:first-child {
+    background-position: 99.752% 100%;
+    background-size: 247.627% 304.219%;
+  }
+
+  &:nth-child(2) {
+    background-position: 0 50%;
+    background-size: 169.201% 304.219%;
+  }
+
+  &:nth-child(3) {
+    background-position: 0 100%;
+    background-size: 246.727% 304.219%;
+  }
+
+  &:nth-child(4) {
+    background-position: 99.752% 50%;
+    background-size: 247.627% 304.219%;
+  }
+
+  &:nth-child(5) {
+    background-position: 0 0;
+    background-size: 246.727% 304.219%;
+  }
+
+  &:last-child {
+    background-position: 100% 0;
+    background-size: 246.727% 304.219%;
+  }
+
+  &__title {
+    color: $white;
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+  }
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  height: 60vh;
+  padding: 3rem 0;
+
+  &__container {
+    @include size(6);
+    @include size-lg(8);
+    @include size-md(10);
+    @include size-xs(11);
+
+    border: 2px solid $dark;
+    border-top: none;
+    text-align: center;
+    margin: auto
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -0.75rem;
+
+    @include md(margin-top, -0.57rem);
+    @include sm(margin-top, -0.37rem);
+
+  }
+
+  &__title:before,
+  &__title:after {
+    content: '';
+    height: 2px;
+    flex-basis: 25%;
+    background-color: $dark;
+
+    @include sm(flex-basis, 20%)
+  }
+
+  &__info {
+    @include offset-padding(2);
+    @include offset-padding-lg(2);
+    @include offset-padding-md(2);
+    @include offset-padding-sm(0.5);
+    @include offset-padding-xs(0.5);
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    line-height: 1.3rem
+  }
+
+  &__button {
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-family: 'Futura';
+      font-weight: bold;
+      background-color: $dark;
+      color: $white;
+      padding: 16px 2px;
+      letter-spacing: 0.3125rem;
+      cursor: pointer;
+      margin-bottom: 3rem;
+
+      @include size(6);
+      @include size-sm(9);
+
+      @include md(font-size, 0.8rem);
+      @include sm(font-size, 0.5rem);
+    }
+}
+
+.copyright {
+  font-family: 'Lato';
+  font-size: 0.6rem;
+  color: #777;
+}
